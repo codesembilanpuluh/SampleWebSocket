@@ -10,12 +10,12 @@
 	<script src="https://cdn.socket.io/4.7.2/socket.io.min.js" integrity="sha384-mZLF4UVrpi/QTWPA7BjNPEnkIfRFn4ZEO3Qt/HFklTJBj/gBOV8G3HcKn4NfQblz" crossorigin="anonymous"></script>
 	<script>
 		const socket = io("ws://localhost:3000");
-		console.log(socket);
-
 		function sendData() {
-			var date = new Date
-			socket.emit('send', date)
-			alert('Request Terkirim')
+			var data = {
+				'no': 1,
+				'nama': 'Muhammad Rahmat'
+			}
+			socket.emit('send', data)
 		}
 	</script>
 </body>

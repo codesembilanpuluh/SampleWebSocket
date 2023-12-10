@@ -12,9 +12,9 @@ var io = require('socket.io')(server, {
 });
 
 io.on("connection", (socket) => {
-    console.log("Connected!");
 	socket.on('send', (params) => {
-		console.log(params)
+        console.log(params)
+		io.emit('get-data', JSON.stringify(params));
 	})
 });
 
